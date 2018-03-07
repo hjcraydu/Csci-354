@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>cofferun</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" href="stylesheets/styles.css">
+</head>
+
+<body class="container">
+  <header>
+    <img class="header-image" src="images/greencup.png" alt="two yellow coffee cups">
+    <h1>CoffeeRun</h1>
+    <img class="header-image" id="flipped_image" src="images/greencup.png" alt="two yellow coffee cups">
+  </header>
+  <section>
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <form data-coffee-order="form">
+          <div class="form-group">
+            <label for="coffeeOrder">Coffee Order</label>
+            <input class="form-control" name="coffee" id="coffeeOrder" autofocus required pattern="[a-zA-Z\s]+">
+          </div>
+          <div class="form-group">
+            <label for="emailInput">Email</label>
+            <input class="form-control" type="email" name="emailAddress" id="emailInput" value="" placeholder="dr@who.com" required>
+          </div>
+          <div class="radio">
+            <label>
+              <input type="radio" name="size" value="Short">
+              Short
+            </label>
+          </div>
+          <div class="radio">
+            <label>
+              <input type="radio" name="size" value="Tall" checked>
+              Tall
+            </label>
+          </div>
+          <div class="radio">
+            <label>
+              <input type="radio" name="size" value="Grande">
+              Grande
+              </label>
+          </div>
+          <div class="radio">
+            <label>
+              <input type="radio" name="size" value="X-Grande">
+              <div id = "X-Grande">
+              Extra Grande
+            </div>
+              </label>
+          </div>
+          <div class="form-group">
+            <label for="flavorShot">Flavor Shot</label>
+            <select id="flavorShot" class="form-control" name="flavor">
+              <option value="">None</option>
+              <option value="Caramel">Caramel</option>
+              <option value="Almond">Almond</option>
+              <option value="Mocha">Mocha</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="strengthLevel">Caffeine Rating</label>
+            <input name="strength" id="strengthLevel" type="range" value="30">
+          </div>
+          <button type="submit" class="btn btn-default">Submit</button>
+          <button type="reset" class="btn btn-default">Reset</button>
+        </form>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <h4>Pending Orders:</h4>
+        <div data-coffee-order="checklist">
+        </div>
+      </div>
+    </div>
+  </section>
+  <p>Location:</p>
+  <p>1234 Coffee Drive</p>
+  <p>Coffeeville, MS 12345 USA</p>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js" charset="utf-8"></script>
+  <script src="webshim/js-webshim/minified/polyfiller.js" charset="utf-8"></script>
+  <script src="scripts/validation.js" charset="utf-8"></script>
+  <script src="scripts/checklist.js" charset="utf-8"></script>
+  <script src="scripts/formhandler.js" charset="utf-8"></script>
+  <script src="scripts/remotedatastore.js" charset="utf-8"></script>
+  <script src="scripts/datastore.js" charset="utf-8"></script>
+  <script src="scripts/truck.js" charset="utf-8"></script>
+  <script src="scripts/main.js" charset="utf-8"></script>
+</body>
+
+</html>

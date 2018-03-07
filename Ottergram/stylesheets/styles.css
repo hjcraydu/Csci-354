@@ -1,0 +1,215 @@
+html, body {
+  height: 120%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  background: rgb(194, 183, 218);
+  font-size: 10px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.btn {
+  background: rgb(0, 0, 0);
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 20px;
+  margin-top: 10px;
+  padding: 5px 15px 5px 15px;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background: #3cb0fd;
+  background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+  text-decoration: none;
+}
+
+.main-header {
+  flex: 0 1 auto;
+}
+
+.logo-text {
+  flex: 0 1 auto;
+  font-family: cursive;
+  font-size: 60px;
+  color: rgb(255, 255, 255);
+  background-color: rgb(66, 32, 103);
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+  text-transform: uppercase;
+  animation-duration: 3s;
+  animation-name: slidein;
+}
+
+.main-content {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.thumbnail-item {
+  display: inline-block;
+  min-width: 120px;
+  max-width: 120px;
+  border: 1px solid rgb(100%, 100%, 100%);
+  border: 1px solid rgba(100%, 100%, 100%, 0.0);
+  transition: transform 133ms ease-in-out;
+}
+
+.thumbnail-item:hover {
+  transform: scale(1.2);
+}
+
+.thumbnail-list {
+  flex: 0 1 auto;
+  order: 2;
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  padding: 20px 0;
+  white-space: nowrap;
+  overflow-x: auto;
+}
+
+.thumbnail-image {
+  display: block;
+  width: 100%;
+  height: 200px;
+}
+
+.thumbnail-title {
+  display: block;
+  margin: 0;
+  padding: 10px 17px;
+  background: rgb(66, 32, 103);
+  color: rgb(255, 255, 255);
+  font-size: 20px;
+  font-family: cursive;
+  text-align: center;
+  animation-duration: 3s;
+  animation-name: flipInX;
+}
+
+.detail-image-container {
+  flex: 1 1 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.detail-image-frame {
+  position: relative;
+  text-align: center;
+  transition: transform 333ms cubic-bezier(.77, .23, .61, .93);
+}
+
+.is-tiny {
+  transform: scale(0.001);
+  transition: transform 0ms;
+}
+
+.detail-image {
+  border-style: dotted;
+  border-width: 10px;
+  border-color: rgb(66, 32, 103);
+  width: 90%;
+  height: 500px;
+}
+
+.detail-image-title {
+  position: absolute;
+  bottom: -16px;
+  right: 4px;
+  color: white;
+  text-shadow: rgba(0, 0, 0, 0.9) 1px 2px 9px;
+  font-size: 60px;
+  font-family: cursive;
+}
+
+.hidden-detail .detail-image-container {
+  display: none;
+}
+
+.hidden-detail .thumbnail-list {
+  flex-direction: column;
+  align-items: center;
+}
+
+.hidden-detail .thumbnail-item {
+  max-width: 80%;
+}
+
+@media all and (min-width: 768px) {
+  .main-content {
+    flex-direction: row;
+    overflow: hidden;
+  }
+  .thumbnail-list {
+    flex-direction: column;
+    order: 0;
+    margin-left: 20px;
+    padding: 0 35px;
+  }
+  .thumbnail-item {
+    max-width: 260px;
+  }
+  .thumbnail-item+.thumbnail-item {
+    margin-top: 20px;
+  }
+}
+
+@keyframes slidein {
+  from {
+    margin-left: 100%;
+    width: 300%;
+  }
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
+
+@keyframes flipInX {
+  from {
+    transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+    animation-timing-function: ease-in;
+    opacity: 0;
+  }
+
+  40% {
+    transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+    animation-timing-function: ease-in;
+  }
+
+  60% {
+    transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
+    opacity: 1;
+  }
+
+  80% {
+    transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
+  }
+
+  to {
+    transform: perspective(400px);
+  }
+}
+
+.flipInX {
+  -webkit-backface-visibility: visible !important;
+  backface-visibility: visible !important;
+  animation-name: flipInX;
+}

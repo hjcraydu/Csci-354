@@ -1,0 +1,66 @@
+
+form :focus:required:invalid {
+    border-color: #a94442;
+}
+
+body {
+  background: rgb(140, 116, 98); /*rgb(14, 116, 98)*/
+}
+
+header {
+  text-align: center;
+}
+
+h1 {
+  font-size: 65px;
+  display: inline;
+  color: rgb(71, 41, 0);
+  font-family:  serif;
+  font-weight: 900;
+}
+
+img {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 40px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+p {
+  text-align: center;
+  font-family: serif;
+  font-size: 20px;
+  color: rgb(71, 41, 0);
+}
+
+.panel.panel-default {
+  background: rgb(173, 215, 118); /*rgb(175, 212, 121);*/
+  border-color: rgb(71, 41, 0);
+  border-width: medium;
+  font-size: 15px;
+  color: rgb(71, 41, 0);
+}
+
+.radio {
+  font-weight: 900;
+  color: black;
+}
+
+.btn.btn-default{
+  float: none;
+  display: block;
+  width: 300px;
+  margin: 10px auto;
+  color: rgb(71, 41, 0);
+  font-weight: 900;
+}
+
+#flipped_image {
+  -moz-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+  filter: FlipH;
+  -ms-filter: "FlipH";
+}
